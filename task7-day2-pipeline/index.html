@@ -1434,9 +1434,9 @@ staging:
   tags:
     - EVPN
   script:
-    - ansible-playbook jinja2_fabric.yml
-    - ansible-playbook nxos_fabric.yml
-    - ansible-playbook verify_fabric.yml
+    - ansible-playbook jinja2_fabric.yml -i Stag/hosts 
+    - ansible-playbook nxos_fabric.yml -i Stag/hosts 
+    - ansible-playbook verify_fabric.yml -i Stag/hosts 
   artifacts:
     paths:
       - overlay.txt
@@ -1506,11 +1506,11 @@ git push origin main
 <p>!!! Note
     Make sure to copy the runner token in this step.</p>
 <ul>
-<li>Then click on <strong>Go to runners page</strong> button.  If <code>Leave site?</code> prompt is displayed, then click <strong><code>Leave</code></strong> to proceed.</li>
+<li>Then click on <strong>View runners</strong> button.  If <code>Leave site?</code> prompt is displayed, then click <strong><code>Leave</code></strong> to proceed.</li>
 </ul>
 <p><img alt="" src="../pic/5-5-1c.png" /></p>
 <ul>
-<li>As shown in below screenshot, under <strong><code>Shared runners</code></strong>, click on the toggle switch named <strong>Enable shared runners for this project</strong> to disable the shared runners for this project.  Below screenshot shows the output once sharing has been disabled.</li>
+<li>As shown in below screenshot, under <strong><code>Instance runners</code></strong>, click on the toggle switch named <strong>Enable instance runners for this project</strong> to disable the shared runners for this project.  Below screenshot shows the output once sharing has been disabled.</li>
 </ul>
 <p><img alt="" src="../pic/5-5-2.png" /></p>
 <ul>
